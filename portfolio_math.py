@@ -46,7 +46,7 @@ def optimize_portfolio(mean_returns: pd.Series, cov_matrix: pd.DataFrame, risk_f
     optimized_results = minimize(
         min_func_sharpe, 
         initial_guess, 
-        args=(mean_returns, cov_matrix, risk_free_rate),
+        args=(adjusted_mean_returns, cov_matrix, risk_free_rate),
         method='SLSQP', 
         bounds=bounds, 
         constraints=constraints
